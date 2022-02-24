@@ -1,0 +1,85 @@
+<section id="main-content">
+  <section class="wrapper">
+    <h2>Modifier offre d'emploi</h2>
+    <div class="row mt">
+      <div class="col-lg-12">
+        <div class="form-panel">
+          
+          <form class="form-horizontal style-form" [formGroup]="formAppelOffre"  (ngSubmit)="editAppelOffre()">
+            <div class="form-group">
+              <label  class="col-sm-2 col-sm-2 control-label">Titre</label>
+              <div class="col-sm-10" >
+                <input type="text" class="class1"  id="Name" formControlName="Name" [ngClass]="{'is-invalid':formAppelOffre.get('Name').touched && formAppelOffre.get('Name').invalid}"/>
+                <div class="invalid-feedback">
+                  <div>Le titre est obligatoire</div>
+                </div>
+                
+              </div>
+
+            </div>
+            <div class="form-group ">
+              <label class="col-sm-2 col-sm-2 control-label">Date debut</label>
+              <div class="col-sm-10 ">
+                <mat-form-field appearance="fill" class="testclass">
+                  <mat-label>Choisir une date debut</mat-label>
+                  <input matInput [matDatepicker]="picker1"  formControlName="StartDate" [ngClass]="{'is-invalid':formAppelOffre.get('StartDate').touched && formAppelOffre.get('StartDate').invalid}"/>
+                  <div class="invalid-feedback">
+                    <div>La date debut est obligatoire</div>
+                  </div>
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1 startView="year"></mat-datepicker>
+              </mat-form-field>              
+              </div>
+            </div>
+            <div class="form-group" >
+              <label class="col-sm-2 col-sm-2 control-label">Date fin</label>
+              <div class="col-sm-10">
+                <mat-form-field appearance="fill" class="testclass">
+                  <mat-label>Choisir une date fin</mat-label>
+                  <input matInput [matDatepicker]="picker2" formControlName="EndDate" class="class4" id="enddate" [ngClass]="{'is-invalid':formAppelOffre.get('EndDate').touched && formAppelOffre.get('EndDate').invalid}">
+                  <div class="invalid-feedback">
+                    <div>La date fin est obligatoire</div>
+                  </div>
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 startView="year"></mat-datepicker>
+              </mat-form-field>              
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Description</label>
+              <div class="col-sm-10">
+                <input type="text" class="class2" formControlName="Description" >
+              </div>
+            </div>
+            <div class="form-group"  >
+              <div class="class3"fxLayout="row  " fxLayoutAlign="space-between center"  fxLayoutGap="16px grid" >
+                    
+
+                  
+
+
+                  <div type="submit" class="form-control">
+                    <div fxLayout="row" fxLayoutAlign="center center" routerLink="/appeloffre"><mat-icon style="font-size:18px" >  undo</mat-icon>Retour</div>
+                  </div>
+                  <div type="submit" class="form-control" >
+                    <div fxLayout="row" fxLayoutAlign="center center" (click)="ResetAppelOffre()"> <mat-icon style="font-size:18px">refresh</mat-icon>Annuler</div>
+                  </div>
+                  <div  type="submit" class="form-control" >
+                    <div fxLayout="row" fxLayoutAlign="center center" (click)="editAppelOffre()"  ><mat-icon style="font-size:18px"> add</mat-icon> Valider</div>
+                  </div>
+              </div>
+
+            </div>
+            
+
+
+
+
+
+
+          </form>
+        </div>
+      </div>
+      <!-- col-lg-12-->
+    </div>

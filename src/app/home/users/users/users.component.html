@@ -1,0 +1,52 @@
+<section id="main-content">
+  <section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> Responsive Table Examples</h3>
+    <div class="row mt">
+      <div class="col-lg-12">
+        <div class="content-panel">
+          <h4><i class="fa fa-angle-right"></i> Responsive Table</h4>
+          <section id="unseen">
+            <button routerLink="add" style="text-align: right !important;"> Ajouter Client </button>
+            <table class="table table-bordered table-striped table-condensed">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>FirstName and lastName</th>
+                <th class="numeric">Phone</th>
+                <th class="numeric">Email</th>
+                <th class="numeric">Photo</th>
+                <th class="numeric">Date</th>
+                <th class="numeric">Remove</th>
+                <th class="numeric">Edit</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let u of users;let i=index">
+                <td>{{i + 1}}</td>
+
+                <td>
+                  <app-children [firstName]="u.firstName" [lastName]="u.lastName"></app-children>
+                </td>
+                <td class="numeric">{{u.lastName}}</td>
+                <td class="numeric">{{u.phone}}</td>
+                <td class="numeric">{{u.email}}</td>
+                <td class="numeric"><img src="{{base_url}}/{{u.photo}}" height="150" width="150"></td>
+                <td class="numeric">{{u.createdAt | date :'dd-MMM-yyyy' }}</td>
+                <td class="numeric" (click)="remove(u.id)"><i class="fa fa-trash-o"></i></td>
+                <td class="numeric" routerLink="edit/{{u.id}}">edit</td>
+              </tr>
+
+              </tbody>
+
+
+            </table>
+          </section>
+        </div>
+        <!-- /content-panel -->
+      </div>
+      <!-- /col-lg-4 -->
+    </div>
+
+  </section>
+  <!-- /wrapper -->
+</section>

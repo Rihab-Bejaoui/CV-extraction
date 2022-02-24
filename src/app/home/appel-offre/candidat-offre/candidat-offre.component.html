@@ -1,0 +1,60 @@
+<section id="main-content">
+    <section class="wrapper">
+      <mat-toolbar color="primary">
+        <span>
+         <h5></h5>
+        </span>
+      </mat-toolbar>
+      <div class="section-header">
+        <h2>Top 10 candidats pour l'offre {{Name}}</h2>
+      </div>
+  
+      <div class='search-div'>        
+        <mat-form-field class="search-form-field" floatLabel="never">
+          <i class="fa fa-search"></i>
+          <input  matInput [(ngModel)]="NameCandidat" (input)="Search()" placeholder="
+          Rechercher" autocomplete="off"  >        
+        </mat-form-field>
+      </div>
+      <div class="content"  >
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">  
+    
+      <table class="table ">
+        <thead>
+        <tr>
+          <th class="numeric">Nom de condidat</th>
+          <th class="numeric">Numéro de téléphone</th>
+          <th class="numeric">Adresse Email</th>
+          <th class="numeric">Score</th>
+          
+
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of candidat| paginate: { itemsPerPage: 7, currentPage: p }; ;let i=index">
+            <td class="numeric">{{u[0]}}</td>
+            <td class="numeric">{{u[1]}}</td>
+            <td class="numeric">{{u[2]}}</td>
+            <td class="numeric">{{u[3]}} </td>
+            <td><span class="material-icons">
+              file_download
+              </span></td>
+
+            
+          
+          </tr>
+          
+        </tbody>
+    
+    
+      </table>
+      <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+    
+      </div>
+      </div>
+
+      
+  
+    </section>
+    <!-- /wrapper -->
+  </section>

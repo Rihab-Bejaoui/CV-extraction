@@ -1,0 +1,27 @@
+li {
+    list-style-type:square;
+    text-size-adjust:200px !important;
+}
+.titre1{
+    text-align:justify !important;
+    color: blue!important;
+    margin-top: 4% !important;
+}
+.titre2{
+    text-align: justify !important;
+    color: black !important;
+    }
+.img-fluid{
+    margin-top:0% !important;
+    margin-bottom:10% !important;
+    margin-right:10% !important;
+
+}
+.col{
+    margin-top:10% !important;
+    margin-bottom:10% !important;
+    margin-right:10% !important;
+}
+
+
+

@@ -1,0 +1,28 @@
+.content{
+    padding:0;
+    
+}
+.search-div{
+    margin: 10px 0;
+      }
+      .search-form-field{
+          width: 70%;
+          margin-left: 0;
+          padding: 5px 10px 5px 0;
+          background-color: white;
+          border-radius: 5px;
+          }
+          .search-form-field div.mat-form-field-underline{
+              display: none;
+          }
+          .search-form-field div.mat-form-field-infix{
+            border-top: none;
+        }
+        .search-form-field div.mat-form-field-suffix{
+            height: 32px;
+            width: 32px;
+
+        }
+        .fa fa-search{
+            margin-left: 100% !important;
+        }

@@ -1,0 +1,59 @@
+<section id="main-content">
+    <section class="wrapper">
+  
+      <mat-toolbar color="primary">
+        <span>
+         <h5></h5>
+        </span>
+      </mat-toolbar>
+      <div class="section-header">
+        <h2>Liste des cvs dans {{category}} </h2>
+      </div>
+       
+    <div class='search-div'>
+ 
+
+          
+      <mat-form-field class="search-form-field" floatLabel="never">
+        <i class="fa fa-search"></i>
+          <input id="searchbar" matInput [(ngModel)]="Names" (input)="Search()" placeholder="
+          Rechercher" autocomplete="off"  >
+          
+      </mat-form-field>
+
+    </div>
+
+ 
+
+    <div class="content"  >
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+     
+  
+        <table class="table ">
+          <thead>
+          <tr>
+            <th class="numeric">Nom de candidat</th>
+            <th >Numéro de téléphone</th>
+            <th class="numeric">Adresse Email</th>
+            <th class="numeric text-center"><i class="fa fa-plus-circle" routerLink="add" ></i></th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of cv| paginate: { itemsPerPage: 7, currentPage: p }; let i=index"> 
+              <td class="numeric">{{u[1]}}</td>
+              <td  class="numeric"><i *ngFor="let i of [0,1]"> {{u[2][i]}}<br></i></td>
+              <td class="numeric"><i *ngFor="let i of [0,1]">{{u[3][i]}} <br></i></td>
+              <td fxLayout="row " fxLayoutGap="5px grid" class="numeric text-center">
+                <i class="material-icons" routerLink="candidat/{{u[0]}}" style="font-size:25px">read_more</i>
+                <i  class="fa fa-external-link" title="add" style="font-size:25px" ></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls class='pagination' (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+    </section>
+    <!-- /wrapper -->
+</section>
+

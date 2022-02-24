@@ -1,0 +1,7 @@
+footer {
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: lightslategray;
+}

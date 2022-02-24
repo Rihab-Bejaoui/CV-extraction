@@ -1,0 +1,28 @@
+.card {
+    min-height: 10px;
+    max-width: 400px;
+
+} 
+.card table th {
+    padding: 5px;
+    background-color: #ffe9c9;
+    border-bottom: 1px solid #ffca7b;
+    font-weight: 500 !important;
+}
+.card table td {
+    padding: 5px;
+    background-color: #ffe9c9;
+    border-bottom: 1px solid #ffca7b;
+}
+.bg-gray {
+    background: #fefefe;
+    border-top: 2px solid #ddd;
+    padding: 7px;
+
+}
+.bg-gray .table tr:first-child th, .bg-gray .table tr:first-child td {
+  border-top: 0 !important
+}
+.text-bold {
+    font-weight: 500;
+}
